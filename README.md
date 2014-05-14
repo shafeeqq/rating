@@ -1,4 +1,4 @@
-rating
+Rating
 ======
 
 Simple plugin for rating articles with multiple theme and language
@@ -12,7 +12,7 @@ The rating plugin provides the ability to lock the rating and call back function
 
 ## Getting Started
 
-Include copyrow plugin in your page and include div with data attribute
+Include rating plugin in your page and include div with data attribute
 
 
 ## Configuration option
