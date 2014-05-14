@@ -62,9 +62,6 @@
 	<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=4></div>
 	</div>
 
-	<div class="row">
-	<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=4 data-theme=5></div>
-	</div>
 
 </body>
 </html>

@@ -179,20 +179,8 @@
 
 						break;
 
+						
 						case "2":
-
-						this.ratedstar='star-ratedstar';
-						this.unratedstar='star-unratedstar';
-						this.setcss=this.ratedstar;
-						if(lang=='ar')
-							this.halfstar='star-halfstar_ar';
-						else
-						this.halfstar='star-halfstar_en';	
-
-
-						break;
-
-						case "3":
 						this.ratedstar='star-2-enable';
 						this.unratedstar='star-2-disable';
 						this.setcss=this.ratedstar;
@@ -204,7 +192,7 @@
 
 						break;
 
-						case "4":
+						case "3":
 						this.ratedstar='star-4-enable';
 						this.unratedstar='star-4-disable';
 						this.setcss=this.ratedstar;
@@ -216,7 +204,7 @@
 
 						break;
 
-						case "5":
+						case "4":
 						this.ratedstar='star-1-enable';
 						this.unratedstar='star-1-disable';
 						this.setcss=this.ratedstar;
