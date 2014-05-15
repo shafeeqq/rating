@@ -288,7 +288,7 @@
 
 		},
 		getRatingposition	: function(e) {
-			console.log(this.config.halfrate)
+			
 			if(this.config.halfrate=="true")
 			{
 			var $currentstar = $(e.currentTarget),
