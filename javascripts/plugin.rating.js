@@ -111,7 +111,7 @@
 						    			$self.setactiveClass(index+1);
 
 						    				
-						    			$(this).removeClass($self.unratedstar).addClass(' '+$self.setcss);		
+						    			$(this).removeClass($self.unratedstar+' '+$self.ratedstar).addClass(' '+$self.setcss);		
 										
 
 										});
@@ -341,18 +341,7 @@
 			 return this;
 		 });
 			 
-		/*$(element).each(function(index) {
-			
-			options={
-
-				lock	: $(this).data('lock'),
-				currentrate	:	$(this).data('rated'),
-				totalstar	: $(this).data('totalstar')
-
-			};
-			 new Rating(element,options);
-			 return this;
-		});*/
+		
 		
 	}
 
