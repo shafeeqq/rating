@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rating by shafeeqq</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rating</h1>
+        <p>Simple plugin for rating articles with multiple theme and language</p>
+
+        <p class="view"><a href="https://github.com/shafeeqq/rating">View the Project on GitHub <small>shafeeqq/rating</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/shafeeqq/rating/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/shafeeqq/rating/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/shafeeqq/rating">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a name="welcome-to-my-rating-plugin-page" class="anchor" href="#welcome-to-my-rating-plugin-page"><span class="octicon octicon-link"></span></a>Welcome to My Rating Plugin Page.</h3>
+
+<p>This is a simple plugin used to rate the articles or new of your project with simple steps. You can customize as you need, with the configurable options.</p>
+
+<p>The rating plugin provides the ability to lock the rating and call back function will execute to save the user rating to database.</p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started.</h2>
+
+<p>Include rating plugin in your page and include div with data attribute</p>
+
+<h2>
+<a name="add-the-script-on-head" class="anchor" href="#add-the-script-on-head"><span class="octicon octicon-link"></span></a>Add the script on head</h2>
+
+<pre><code>  $('.ratingbox').stars({
+    lang        : "en",
+        callbackfn  : function(ratedid,ratedvalue) {
+        // call back function
+        }
+    });
+    });
+
+</code></pre>
+
+<h2>
+<a name="inclde-your-div" class="anchor" href="#inclde-your-div"><span class="octicon octicon-link"></span></a>Inclde your div</h2>
+
+<pre><code>&lt;div class="ratingbox" data-id="1" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=1&gt;&lt;/div&gt;
+
+</code></pre>
+
+<h2>
+<a name="configuration-option" class="anchor" href="#configuration-option"><span class="octicon octicon-link"></span></a>Configuration option</h2>
+
+<pre><code>    "data-lock" :"false"   // To lock the rating on load pass true
+    "data-lang" : "en", //  language to set the direction of rating . (en or ar)
+    "data-id" : "1", //  id or your article or news
+    "data-rated" : 3.2,  // the average of existing user rated value 
+    "data-totalstar" : "5",  // Total number of stars needed for rating
+    "data-theme"     : "1"     // theme according to your page  [1 to 4]
+
+</code></pre>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>Shafeeq.K.Sidhik
+Doha-Qatar</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://shafeeqq.com/plugins/simple-jquery-plugin-for-rating/">http://shafeeqq.com/plugins/simple-jquery-plugin-for-rating/</a> </p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/shafeeqq">shafeeqq</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-51015099-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
