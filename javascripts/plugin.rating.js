@@ -21,7 +21,10 @@
 		$self=this;
 		this.elementClass=$(this.element).attr("class");
 		//this.setcss='rated';
-		this.setupLanguage(this.config.lang);
+					var lang=$(element).attr("data-lang");
+					if($.type(lang)=='undefined')
+					lang=this.config.lang;
+		this.setupLanguage(lang);
 
 		this.setupTheme(this.element);
 
@@ -164,7 +167,10 @@
 		setupTheme		:function   (element) {
 
 					var theme=$(element).attr("data-theme"),lang=$(element).attr("data-lang");
+					if($.type(lang)=='undefined')
+					lang=this.config.lang;
 
+					
 					switch(theme)
 					{
 						case "1":
@@ -172,7 +178,7 @@
 						this.unratedstar='unrated';
 						this.setcss=this.ratedstar;
 						if(lang=='ar')
-							this.halfstar='halfstar';
+							this.halfstar='halfstarar';
 						else
 						this.halfstar='halfstar';	
 

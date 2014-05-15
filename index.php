@@ -116,7 +116,7 @@
 		
 		</div>
 	</div><div style="float: right;margin-top:10px;margin-right:5px">
-		<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=4></div>
+		<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=4 data-lang='ar'></div>
 	</div>
 
 	<div class="code">
