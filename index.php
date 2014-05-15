@@ -88,7 +88,7 @@
 	<div class="code">
 		
 			1. Download the project folder from <a target="_blank" href="https://github.com/shafeeqq/rating"><img style="margin-left: 20px;margin-right: 20px;" src="images/git-logosmall.png" alt="Git hub" border="0"></a> 
-  or from <a class="link" href="http://www.shafeeqq.com/plugins/plugin.rating.rar">here</a>
+  or from <a class="link" href="http://www.shafeeqq.com/plugins/plugin.rating.zip">here</a>
 
 	</div><div style="float: right;margin-top:10px;margin-right:5px">
 	<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=2></div>
