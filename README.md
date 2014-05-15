@@ -14,11 +14,26 @@ The rating plugin provides the ability to lock the rating and call back function
 
 Include rating plugin in your page and include div with data attribute
 
+## Add the script on head
+
+     $('.ratingbox').stars({
+	lang		: "en",
+		callbackfn	: function(ratedid,ratedvalue) {
+		// call back function
+		}
+	});
+	});
+	
+	
+## Inclde your div  
+
+    <div class="ratingbox" data-id="1" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=1></div>
+
 
 ## Configuration option
 
 
-     "data-lock" :"false"   // To lock the rating on load pass true
+    "data-lock" :"false"   // To lock the rating on load pass true
     "data-lang" : "en", //  language to set the direction of rating . (en or ar)
     "data-id" : "1", //  id or your article or news
     "data-rated" : 3.2,  // the average of existing user rated value 
