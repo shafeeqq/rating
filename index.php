@@ -148,6 +148,21 @@
 		</div>
 	</div>
 
+	<div class="code">
+	5. Configuration Options
+	<br><br>
+		<div class="row">
+			
+			"data-lock" :"false"   // To lock the rating on load pass true<br>
+			"data-lang" : "en", //  language to set the direction of rating . (en or ar)<br>
+			"data-id" : "1", //  id or your article or news<br>
+			"data-rated" : 3.2,  // the average of existing user rated value <br>
+			"data-totalstar" : "5",  // Total number of stars needed for rating<br>
+			"data-theme"     : "1"     // theme according to your page  [1 to 4]<br>
+			
+		</div>
+	</div>
+
 
 
 	<div class="clear"></div>
