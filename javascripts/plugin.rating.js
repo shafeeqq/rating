@@ -6,6 +6,7 @@
 		totalstar	: 5,
 		rated	: 	  0,
 		theme		: 1,
+		halfrate	: true,
 
 		callbackfn	: function() {
 			
@@ -53,14 +54,16 @@
 							$('<div/>',{
 								"class": "star"
 							}).addClass(this.langclass+' '+this.setcss).appendTo(this.element).hover(
-						    function() {
+						    function(e) {
 						    //mouse over
 						    		$self.resetOptions(this);
 									$self.setupTheme($(this).closest('.'+$self.elementClass));
 						    		if($self.config.lock=="false")
 									{
 										
+						    			var isfullstar=$self.getRatingposition(e);
 						    			
+
 						      		 	var currentindex=$(this).index();
 						      		 		
 										$(this).closest('.'+$self.elementClass).find('.star').each(function(index){
@@ -68,7 +71,15 @@
 
 												if(currentindex>=index)
 												{
-												$(this).removeClass($self.unratedstar+' '+$self.halfstar).addClass($self.ratedstar);
+													if(currentindex==index)
+													{
+														if(isfullstar==true)
+														$(this).removeClass($self.unratedstar+' '+$self.halfstar).addClass($self.ratedstar);
+														else
+														$(this).removeClass($self.unratedstar+' '+$self.ratedstar).addClass($self.halfstar);
+													}
+													else
+													$(this).removeClass($self.unratedstar+' '+$self.halfstar).addClass($self.ratedstar);
 												}
 												else
 												{
@@ -111,7 +122,7 @@
 						    			$self.setactiveClass(index+1);
 
 						    				
-						    			$(this).removeClass($self.unratedstar+' '+$self.ratedstar).addClass(' '+$self.setcss);		
+						    			$(this).removeClass($self.unratedstar+' '+$self.ratedstar+' '+$self.halfstar).addClass(' '+$self.setcss);		
 										
 
 										});
@@ -129,8 +140,15 @@
 						    	$self.resetOptions(this);
 								$self.setupTheme($(this).closest('.'+$self.elementClass));	
 						    		if($self.config.lock=="false")
-									{		
-						    		var ratedvalue=$(this).index()+1;
+									{
+
+											var isfullstar=$self.getRatingposition(event),ratedvalue;
+						    				if(isfullstar==true)
+						    				ratedvalue=$(this).index()+1;
+						    				else
+						    				ratedvalue=(parseInt($(this).index())+1)-parseFloat(".5");					      	
+													
+						    		
 						    		var ratedid=$(this).closest('.'+$self.elementClass).attr("data-id");
 
 						    		$self.triggerRating(ratedid,ratedvalue);
@@ -154,6 +172,21 @@
 						    		event.preventDefault();
 
 						    	
+
+						    }).on('mousemove', function (e) {
+
+						    		if($self.config.lock=="false")
+									{
+										
+						    			var isfullstar=$self.getRatingposition(e);
+						    									      	
+											if(isfullstar==true)
+											$(this).removeClass($self.unratedstar+' '+$self.halfstar).addClass($self.ratedstar);
+											else
+											$(this).removeClass($self.unratedstar+' '+$self.ratedstar).addClass($self.halfstar);
+													
+
+									}	
 
 						    });
 									
@@ -254,6 +287,29 @@
 
 
 		},
+		getRatingposition	: function(e) {
+			console.log(this.config.halfrate)
+			if(this.config.halfrate=="true")
+			{
+			var $currentstar = $(e.currentTarget),
+ 			offset = $currentstar.offset(),
+  
+			 currentposition = e.pageX - offset.left,
+			 w = $currentstar.width(),fullstar
+			 chalf= w/2;
+			 
+			 if(currentposition<=chalf)
+			 fullstar=false;
+			 else
+			 fullstar=true;
+			}
+			else
+			{
+			fullstar=true;
+			}
+  
+     		return fullstar;
+		},
 		triggerRating	:function(ratedid,ratedvalue) {
 			
 
@@ -307,17 +363,18 @@
 		},
 		resetOptions	: function (element) {
 
-										var lock,rated,totalstar;
+										var lock,rated,totalstar,halfrate;
 										 lock=$(element).closest('.'+$self.elementClass).attr('data-lock');
 										 rated=$(element).closest('.'+$self.elementClass).attr('data-rated');
 										 totalstar=	$(element).closest('.'+$self.elementClass).attr('data-totalstar');
+										 halfrate=	$(element).closest('.'+$self.elementClass).attr('data-halfrate');
 		
 										dataoptions={
 
 											lock	: (lock==''  || $.type(lock)=='undefined' ? false : lock),
 											rated	: (rated==''  || $.type(rated)=='undefined' ? 0 : rated),
-											totalstar	: (totalstar==''  || $.type(totalstar)=='undefined' ? 5 : totalstar)
-
+											totalstar	: (totalstar==''  || $.type(totalstar)=='undefined' ? 5 : totalstar),
+											halfrate	:  (halfrate==''  || $.type(halfrate)=='undefined' ? true : halfrate)
 											};
 
 										this.config=$.extend({},this.config,dataoptions); // default options from script to all element
@@ -339,8 +396,8 @@
 				lock	: 	($(this).data('lock')==''  || $.type($(this).data('lock'))=='undefined' ? false : $(this).data('lock')),
 				rated	:	($(this).data('rated')==''  || $.type($(this).data('rated'))=='undefined' ? 0 : $(this).data('rated')),
 				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? 5 : $(this).data('totalstar')),
-				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? 1 : $(this).data('theme'))
-				
+				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? 1 : $(this).data('theme')),
+				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? true : $(this).data('halfrate'))
 				};
 				
 				options=$.extend({},options,dataoptions); // default options from script to all element

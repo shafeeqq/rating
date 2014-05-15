@@ -39,6 +39,7 @@ Include rating plugin in your page and include div with data attribute
     "data-rated" : 3.2,  // the average of existing user rated value 
     "data-totalstar" : "5",  // Total number of stars needed for rating
     "data-theme"     : "1"     // theme according to your page  [1 to 4]
+    "data-halfrate"     : "true"  //  if true user have .5 rating feature else fullrate
 
 #Developed By
 

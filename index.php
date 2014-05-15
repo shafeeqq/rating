@@ -83,7 +83,7 @@
 	<h3>Easily change the theme and language</h2>
 	<hr>
 	<h2>Configuration Steps</h2><div style="float: right;">
-	<div class="ratingbox" data-id="1" data-lock="false" data-rated=2.5 data-totalstar=3 data-theme=1></div>
+	<div class="ratingbox" data-id="1" data-lock="false" data-halfrate="true" data-rated=2.5 data-totalstar=3 data-theme=1></div>
 	</div>
 	<div class="code">
 		
@@ -91,7 +91,7 @@
   or from <a class="link" href="http://www.shafeeqq.com/plugins/plugin.rating.zip">here</a>
 
 	</div><div style="float: right;margin-top:10px;margin-right:5px">
-	<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=2></div>
+	<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-halfrate="true" data-totalstar=3 data-theme=2></div>
 	</div>
 
 	<div class="code">
@@ -159,6 +159,7 @@
 			"data-rated" : 3.2,  // the average of existing user rated value <br>
 			"data-totalstar" : "5",  // Total number of stars needed for rating<br>
 			"data-theme"     : "1"     // theme according to your page  [1 to 4]<br>
+			"data-halfrate"     : "true"  // if true user have .5 rating feature else fullrate<br>
 			
 		</div>
 	</div>
