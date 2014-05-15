@@ -167,7 +167,7 @@
 		setupTheme		:function   (element) {
 
 					var theme=$(element).attr("data-theme"),lang=$(element).attr("data-lang");
-					if($.type(lang)=='undefined')
+					if($.type(lang)=='undefined' || lang=='')
 					lang=this.config.lang;
 
 					
@@ -307,11 +307,16 @@
 		},
 		resetOptions	: function (element) {
 
+										var lock,rated,totalstar;
+										 lock=$(element).closest('.'+$self.elementClass).attr('data-lock');
+										 rated=$(element).closest('.'+$self.elementClass).attr('data-rated');
+										 totalstar=	$(element).closest('.'+$self.elementClass).attr('data-totalstar');
+		
 										dataoptions={
 
-											lock	: $(element).closest('.'+$self.elementClass).attr('data-lock'),
-											rated	:	$(element).closest('.'+$self.elementClass).attr('data-rated'),
-											totalstar	: $(element).closest('.'+$self.elementClass).attr('data-totalstar')
+											lock	: (lock==''  || $.type(lock)=='undefined' ? false : lock),
+											rated	: (rated==''  || $.type(rated)=='undefined' ? 0 : rated),
+											totalstar	: (totalstar==''  || $.type(totalstar)=='undefined' ? 5 : totalstar)
 
 											};
 
@@ -327,14 +332,17 @@
 			
 		 this.each(function(index, val) {
 
+		 		
+		 			
 		 		dataoptions={
 
-				lock	: $(this).data('lock'),
-				rated	:	$(this).data('rated'),
-				totalstar	: $(this).data('totalstar'),
-				theme		: $(this).data('theme')
+				lock	: 	($(this).data('lock')==''  || $.type($(this).data('lock'))=='undefined' ? false : $(this).data('lock')),
+				rated	:	($(this).data('rated')==''  || $.type($(this).data('rated'))=='undefined' ? 0 : $(this).data('rated')),
+				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? 5 : $(this).data('totalstar')),
+				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? 1 : $(this).data('theme'))
+				
 				};
-
+				
 				options=$.extend({},options,dataoptions); // default options from script to all element
 				
 		 	 new Rating(this,options);

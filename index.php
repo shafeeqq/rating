@@ -83,7 +83,7 @@
 	<h3>Easily change the theme and language</h2>
 	<hr>
 	<h2>Configuration Steps</h2><div style="float: right;">
-	<div class="ratingbox" data-id="1" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=1></div>
+	<div class="ratingbox" data-id="1" data-lock="false" data-rated=2.5 data-totalstar=3 data-theme=1></div>
 	</div>
 	<div class="code">
 		
