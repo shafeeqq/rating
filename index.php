@@ -105,7 +105,7 @@
 		</div>
 		
 	</div><div style="float: right;margin-top:10px;margin-right:5px">
-	<div class="ratingbox" data-id="2" data-lock=false data-rated=3.5 data-totalstar=4 data-theme=3></div>
+	<div class="ratingbox" data-id="2" data-lang="ar" data-lock=false data-rated=3.5 data-halfrate=true data-totalstar=4 data-theme=3></div>
 	</div>
 
 	<div class="code">

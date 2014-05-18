@@ -288,20 +288,33 @@
 
 		},
 		getRatingposition	: function(e) {
+
+			
 			
 			if(this.config.halfrate=="true")
 			{
-			var $currentstar = $(e.currentTarget),
- 			offset = $currentstar.offset(),
-  
-			 currentposition = e.pageX - offset.left,
-			 w = $currentstar.width(),fullstar
+				var $currentstar,offset,currentposition,w,fullstar,chalf
+
+			$currentstar = $(e.currentTarget);
+ 			offset = $currentstar.offset();
+  			 if(this.config.lang=='ar')	
+  			 currentposition = (($currentstar.offset().left + $currentstar.outerWidth())-e.pageX);	
+  			 else
+			 currentposition = e.pageX - offset.left;
+			 
+			 
+
+			 w = $currentstar.width();
 			 chalf= w/2;
 			 
+
 			 if(currentposition<=chalf)
 			 fullstar=false;
 			 else
 			 fullstar=true;
+
+
+
 			}
 			else
 			{
@@ -363,18 +376,20 @@
 		},
 		resetOptions	: function (element) {
 
-										var lock,rated,totalstar,halfrate;
+										var lock,rated,totalstar,halfrate,lang;
 										 lock=$(element).closest('.'+$self.elementClass).attr('data-lock');
 										 rated=$(element).closest('.'+$self.elementClass).attr('data-rated');
 										 totalstar=	$(element).closest('.'+$self.elementClass).attr('data-totalstar');
 										 halfrate=	$(element).closest('.'+$self.elementClass).attr('data-halfrate');
+										 lang=	$(element).closest('.'+$self.elementClass).attr('data-lang');
 		
 										dataoptions={
 
 											lock	: (lock==''  || $.type(lock)=='undefined' ? false : lock),
 											rated	: (rated==''  || $.type(rated)=='undefined' ? 0 : rated),
 											totalstar	: (totalstar==''  || $.type(totalstar)=='undefined' ? 5 : totalstar),
-											halfrate	:  (halfrate==''  || $.type(halfrate)=='undefined' ? true : halfrate)
+											halfrate	:  (halfrate==''  || $.type(halfrate)=='undefined' ? true : halfrate),
+											lang	:  (lang==''  || $.type(lang)=='undefined' ? 'en' : lang)
 											};
 
 										this.config=$.extend({},this.config,dataoptions); // default options from script to all element
@@ -394,6 +409,7 @@
 		 		dataoptions={
 
 				lock	: 	($(this).data('lock')==''  || $.type($(this).data('lock'))=='undefined' ? false : $(this).data('lock')),
+				lock	: 	($(this).data('lang')==''  || $.type($(this).data('lang'))=='undefined' ? 'en' : $(this).data('lang')),
 				rated	:	($(this).data('rated')==''  || $.type($(this).data('rated'))=='undefined' ? 0 : $(this).data('rated')),
 				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? 5 : $(this).data('totalstar')),
 				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? 1 : $(this).data('theme')),
