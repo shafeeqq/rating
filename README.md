@@ -25,7 +25,7 @@ Include rating plugin in your page and include div with data attribute
 	});
 	
 	
-## Inclde your div  
+## Include your div  
 
     <div class="ratingbox" data-id="1" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=1></div>
 
