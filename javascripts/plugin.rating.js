@@ -23,8 +23,10 @@
 		this.elementClass=$(this.element).attr("class");
 		//this.setcss='rated';
 					var lang=$(element).attr("data-lang");
-					if($.type(lang)=='undefined')
-					lang=this.config.lang;
+					
+				
+				
+
 		this.setupLanguage(lang);
 
 		this.setupTheme(this.element);
@@ -175,6 +177,7 @@
 
 						    }).on('mousemove', function (e) {
 
+
 						    		if($self.config.lock=="false")
 									{
 										
@@ -291,12 +294,14 @@
 
 			
 			
+			var $currentstar,offset,currentposition,w,fullstar,chalf
 			if(this.config.halfrate=="true")
 			{
-				var $currentstar,offset,currentposition,w,fullstar,chalf
+				
 
 			$currentstar = $(e.currentTarget);
  			offset = $currentstar.offset();
+
   			 if(this.config.lang=='ar')	
   			 currentposition = (($currentstar.offset().left + $currentstar.outerWidth())-e.pageX);	
   			 else
@@ -307,7 +312,7 @@
 			 w = $currentstar.width();
 			 chalf= w/2;
 			 
-
+			
 			 if(currentposition<=chalf)
 			 fullstar=false;
 			 else
@@ -376,23 +381,15 @@
 		},
 		resetOptions	: function (element) {
 
-										var lock,rated,totalstar,halfrate,lang;
-										 lock=$(element).closest('.'+$self.elementClass).attr('data-lock');
-										 rated=$(element).closest('.'+$self.elementClass).attr('data-rated');
-										 totalstar=	$(element).closest('.'+$self.elementClass).attr('data-totalstar');
-										 halfrate=	$(element).closest('.'+$self.elementClass).attr('data-halfrate');
-										 lang=	$(element).closest('.'+$self.elementClass).attr('data-lang');
-		
-										dataoptions={
+										
+										 this.config.lock=$(element).closest('.'+$self.elementClass).attr('data-lock');
+										 this.config.rated=$(element).closest('.'+$self.elementClass).attr('data-rated');
+										 this.config.totalstar=$(element).closest('.'+$self.elementClass).attr('data-totalstar');
+										 this.config.halfrate=	$(element).closest('.'+$self.elementClass).attr('data-halfrate');
+										 this.config.lang=	$(element).closest('.'+$self.elementClass).attr('data-lang');
+										
+										
 
-											lock	: (lock==''  || $.type(lock)=='undefined' ? false : lock),
-											rated	: (rated==''  || $.type(rated)=='undefined' ? 0 : rated),
-											totalstar	: (totalstar==''  || $.type(totalstar)=='undefined' ? 5 : totalstar),
-											halfrate	:  (halfrate==''  || $.type(halfrate)=='undefined' ? true : halfrate),
-											lang	:  (lang==''  || $.type(lang)=='undefined' ? 'en' : lang)
-											};
-
-										this.config=$.extend({},this.config,dataoptions); // default options from script to all element
 
 
 		}
@@ -400,23 +397,42 @@
 
 
 	$.fn.stars=function(options){
-		var dataoptions;
+		var dataoptions,optionslock,optionslang,optionsrated,optionstotalstar,optionsid,optionstheme,optionshalfrate;
 			
 		 this.each(function(index, val) {
 
-		 		
+		 		optionslock=(options.lock==''  || $.type(options.lock)=='undefined' ? false : options.lock);
+		 		optionslang=(options.lang==''  || $.type(options.lang)=='undefined' ? 'en' : options.lang);
+		 		optionsrated=(options.rated==''  || $.type(options.rated)=='undefined' ? 0 : options.rated);
+		 		optionstotalstar=(options.totalstar==''  || $.type(options.totalstar)=='undefined' ? 5 : options.totalstar);
+		 		optionsid=(options.id==''  || $.type(options.id)=='undefined' ? 0 : options.id);
+		 		optionstheme=(options.theme==''  || $.type(options.theme)=='undefined' ? 1 : options.theme);
+		 		optionshalfrate=(options.halfrate==''  || $.type(options.halfrate)=='undefined' ? true : options.halfrate);
+
 		 			
 		 		dataoptions={
 
-				lock	: 	($(this).data('lock')==''  || $.type($(this).data('lock'))=='undefined' ? false : $(this).data('lock')),
-				lock	: 	($(this).data('lang')==''  || $.type($(this).data('lang'))=='undefined' ? 'en' : $(this).data('lang')),
-				rated	:	($(this).data('rated')==''  || $.type($(this).data('rated'))=='undefined' ? 0 : $(this).data('rated')),
-				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? 5 : $(this).data('totalstar')),
-				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? 1 : $(this).data('theme')),
-				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? true : $(this).data('halfrate'))
+				lock	: 	($(this).data('lock')==''  || $.type($(this).data('lock'))=='undefined' ? optionslock : $(this).data('lock')),
+				lang	: 	($(this).data('lang')==''  || $.type($(this).data('lang'))=='undefined' ? optionslang : $(this).data('lang')),
+				rated	:	($(this).data('rated')==''  || $.type($(this).data('rated'))=='undefined' ? optionsrated : $(this).data('rated')),
+				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? optionstotalstar : $(this).data('totalstar')),
+				id	: ($(this).data('id')==''  || $.type($(this).data('id'))=='undefined' ? optionsid : $(this).data('id')),
+				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? optionstheme : $(this).data('theme')),
+				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? optionshalfrate : $(this).data('halfrate'))
 				};
+
+
 				
 				options=$.extend({},options,dataoptions); // default options from script to all element
+
+				$(this).attr('data-lock', options.lock);
+				$(this).attr('data-lang', options.lang);
+				$(this).attr('data-rated', options.rated);
+				$(this).attr('data-totalstar', options.totalstar);
+				$(this).attr('data-id', options.id);
+				$(this).attr('data-theme', options.theme);
+				$(this).attr('data-halfrate', options.halfrate);
+				
 				
 		 	 new Rating(this,options);
 			 return this;

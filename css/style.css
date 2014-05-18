@@ -21,9 +21,10 @@
 }
 
 .rated{
-	padding-left: 10px;
+	
 	/*background-image: url(../stars/1-enable.png);
 	background-repeat: no-repeat;*/
+	text-align: center;
 	background-position: -5px -73px;
 	width: 24px;
 	height: 24px;
@@ -31,17 +32,19 @@
 }
 
 .unrated{
-	padding-left: 10px;
+	
 	/*background-image: url(../stars/1-disable.png);
 	background-repeat: no-repeat;*/
 	background-position: -109px -39px;
+	text-align: center;
 	width: 24px;
 	height: 24px;
 	cursor: pointer;
 }
 .halfstar
 {
-	padding-left: 10px;
+	
+	text-align: center;
 	/*background-image: url(../stars/1halfen.png);
 	background-repeat: no-repeat;*/
 	background-position: -73px -73px;
@@ -52,9 +55,10 @@
 }
 .halfstarar
 {
-	padding-left: 10px;
+	
 	/*background-image: url(../stars/1halfen.png);
 	background-repeat: no-repeat;*/
+	text-align: center;
 	background-position: -39px -73px;
 	width: 24px;
 	height: 24px;
