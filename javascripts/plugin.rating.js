@@ -425,13 +425,13 @@
 				
 				options=$.extend({},options,dataoptions); // default options from script to all element
 
-				$(this).attr('data-lock', options.lock);
-				$(this).attr('data-lang', options.lang);
-				$(this).attr('data-rated', options.rated);
-				$(this).attr('data-totalstar', options.totalstar);
-				$(this).attr('data-id', options.id);
-				$(this).attr('data-theme', options.theme);
-				$(this).attr('data-halfrate', options.halfrate);
+				$(this).data('lock', options.lock);
+				$(this).data('lang', options.lang);
+				$(this).data('rated', options.rated);
+				$(this).data('totalstar', options.totalstar);
+				$(this).data('id', options.id);
+				$(this).data('theme', options.theme);
+				$(this).data('halfrate', options.halfrate);
 				
 				
 		 	 new Rating(this,options);
