@@ -53,8 +53,8 @@
 														
 							
 
-							$('<div/>',{
-								"class": "star"
+							$('<i/>',{
+								"class": "fa fa-star"
 							}).addClass(this.langclass+' '+this.setcss).appendTo(this.element).hover(
 						    function(e) {
 						    //mouse over
@@ -68,7 +68,7 @@
 
 						      		 	var currentindex=$(this).index();
 						      		 		
-										$(this).closest('.'+$self.elementClass).find('.star').each(function(index){
+										$(this).closest('.'+$self.elementClass).find('.fa-star').each(function(index){
 
 
 												if(currentindex>=index)
@@ -94,8 +94,8 @@
 									else
 									{
 										
-											$('<div/>',{
-												"class": "star"
+											$('<i/>',{
+												"class": "fa fa-star"
 											}).addClass(this.langclass+' '+$self.ratedstar).appendTo(this.element).hover(
 										    function() {
 
@@ -119,7 +119,7 @@
 									 {
 							        	var currentindex=$(this).index()+1;
 
-						    			$(this).closest('.'+$self.elementClass).find('.star').each(function(index){
+						    			$(this).closest('.'+$self.elementClass).find('.fa-star').each(function(index){
 
 						    			$self.setactiveClass(index+1);
 
@@ -162,7 +162,7 @@
 									 
 							        	var currentindex=$(this).index();
 						      		 		
-										$(this).closest('.'+$self.elementClass).find('.star').each(function(index){
+										$(this).closest('.'+$self.elementClass).find('.fa-star').each(function(index){
 
 
 										if(currentindex>=index)
@@ -209,64 +209,29 @@
 					
 					switch(theme)
 					{
-						case "1":
-						this.ratedstar='rated';
-						this.unratedstar='unrated';
-						this.setcss=this.ratedstar;
-						if(lang=='ar')
-							this.halfstar='halfstarar';
-						else
-						this.halfstar='halfstar';	
+					
 
-
-						break;
-
-						
 						case "2":
-						this.ratedstar='star-2-enable';
-						this.unratedstar='star-2-disable';
-						this.setcss=this.ratedstar;
-						if(lang=='ar')
-							this.halfstar='star-2-halfar';
-						else
-						this.halfstar='star-2-halfen';	
-
-
-						break;
-
 						case "3":
-						this.ratedstar='star-4-enable';
-						this.unratedstar='star-4-disable';
-						this.setcss=this.ratedstar;
-						if(lang=='ar')
-							this.halfstar='star-4-halfar';
-						else
-						this.halfstar='star-4-halfen';	
-
-
-						break;
-
 						case "4":
-						this.ratedstar='star-1-enable';
-						this.unratedstar='star-1-disable';
+						case "5":
+						this.ratedstar='rated'+theme;
+						this.unratedstar='unrated'+theme;
 						this.setcss=this.ratedstar;
 						if(lang=='ar')
-							this.halfstar='star-1-halfar';
+							this.halfstar='fa-star-half-o fa-star-half-o'+theme+' fa-flip-horizontal';
 						else
-						this.halfstar='star-1-halfen';	
-
-
+						this.halfstar='fa-star-half-o fa-star-half-o'+theme;
 						break;
-
 
 						default:
 						this.ratedstar='rated';
 						this.unratedstar='unrated';
 						this.setcss=this.ratedstar;
 						if(lang=='ar')
-							this.halfstar='halfstar';
+							this.halfstar='fa-star-half-o  fa-flip-horizontal';
 						else
-						this.halfstar='halfstar';
+						this.halfstar='fa-star-half-o';
 						break;
 					}
 					

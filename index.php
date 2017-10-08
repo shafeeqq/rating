@@ -2,8 +2,8 @@
 <?
 /**
  * @author SHAFEEQ.K.SIDHIK
- * @copyright 2014
- * @plugin name : Rating plugin
+ * @copyright 2017
+ * @plugin name : Rating plugin version 2 with font awesome
  * 
  */
 ?>
@@ -82,17 +82,14 @@
 	<h1>Simple Plugin for Rating Articles</h1>
 	<h3>Easily change the theme and language</h2>
 	<hr>
-	<h2>Configuration Steps</h2><div style="float: right;">
-	<div class="ratingbox" data-id="1" data-lock="false" data-halfrate="true" data-rated=2.5 data-totalstar=3 data-theme=1></div>
-	</div>
+	<h2>Configuration Steps</h2>
 	<div class="code">
 		
 			1. Download the project folder from <a target="_blank" href="https://github.com/shafeeqq/rating"><img style="margin-left: 20px;margin-right: 20px;" src="images/git-logosmall.png" alt="Git hub" border="0"></a> 
   or from <a class="link" href="https://github.com/shafeeqq/rating/archive/master.zip">here</a>
 
-	</div><div style="float: right;margin-top:10px;margin-right:5px">
-	<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-halfrate="true" data-totalstar=3 data-theme=2></div>
 	</div>
+
 
 	<div class="code">
 	2. Include jquery script and plugin scripts to your project.
@@ -104,8 +101,6 @@
 		&lt;script type="text/javascript" src="javascripts/plugin.rating.js"&gt;&lt;/script&gt;
 		</div>
 		
-	</div><div style="float: right;margin-top:10px;margin-right:5px">
-	<div class="ratingbox" data-id="2" data-lang="ar"  data-lock=false data-rated=3.5 data-halfrate=true data-totalstar=4 data-theme=3></div>
 	</div>
 
 	<div class="code">
@@ -115,9 +110,9 @@
 		&lt;link rel="stylesheet" type="text/css" href="css/style.css"&gt;
 		
 		</div>
-	</div><div style="float: right;margin-top:10px;margin-right:5px">
-		<div class="ratingbox" data-id="2" data-lock=false data-rated=2.5 data-totalstar=3 data-theme=4 data-lang='ar'></div>
 	</div>
+
+	
 
 	<div class="code">
 	4. Include the code on  &lt;head&gt; 
@@ -158,8 +153,9 @@
 			"data-id" : "1", //  id or your article or news<br>
 			"data-rated" : 3.2,  // the average of existing user rated value <br>
 			"data-totalstar" : "5",  // Total number of stars needed for rating<br>
-			"data-theme"     : "1"     // theme according to your page  [1 to 4]<br>
+			"data-theme"     : "1"     // theme according to your page  [1 to 5] (additional can be add to style)<br>
 			"data-halfrate"     : "true"  // if true user have .5 rating feature else fullrate<br>
+			
 			
 		</div>
 	</div>
@@ -167,6 +163,33 @@
 
 
 	<div class="clear"></div>
+<h2>Live Demo</h2>
+
+	<div>1. Full Star with right to left</div><div style="float: right;">
+	<div class="ratingbox" data-id="1" data-lock="false" data-rated=2 data-totalstar=5 data-theme=1></div>
+	</div>
+	<br><br>
+	<div>2. Full Star with left to right</div><div style="float: right;">
+	<div class="ratingbox" data-id="2" data-lock="false" data-rated=3 data-totalstar=5 data-theme=2 data-lang='ar'></div>
+	</div>
+
+	<br><br>
+	<div>3. Half Star with right to left</div><div style="float: right;">
+	<div class="ratingbox" data-id="2" data-lock="false" data-rated=3 data-totalstar=4 data-theme=3 data-halfrate=true></div>
+	</div>
+
+	<br><br>
+	<div>4. Half Star with left to right</div><div style="float: right;">
+	<div class="ratingbox" data-id="2" data-lock="false" data-rated=3 data-totalstar=4 data-theme=4 data-halfrate=true data-lang='ar'></div>
+	</div>
+
+	<br><br>
+	<div>5. Additional theme with already 3.5 rated</div><div style="float: right;">
+	<div class="ratingbox" data-id="2" data-lock="true" data-rated=2.5 data-totalstar=5 data-theme=5 data-halfrate=true data-lang='en'></div>
+	</div>
+	<br><br><br><br>
+	</div>
+
 </div>
 
 </body>
