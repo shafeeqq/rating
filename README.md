@@ -49,5 +49,4 @@ Include rating plugin in your page and include div with data attribute
 
 SHAFEEQ.K.SIDHIK
 DOHA - QATAR
-# rating2
-# rating2
+
