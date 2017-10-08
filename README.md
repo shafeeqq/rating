@@ -1,12 +1,12 @@
-Rating
+Rating version 2 with awesome font
 ======
 
-Simple plugin for rating articles with multiple theme and language
+Simple plugin for rating has upgraded with font awesome with different theme 
 
-[Rating Plugin](https://github.com/shafeeqq/rating) - A plugin to rate the articles
+[Rating Plugin](https://github.com/shafeeqq/rating2) - A plugin to rate the articles,stories etc
 ================================
 
-This is a simple plugin used to rate the articles or new of your project with simple steps. You can customize as you need, with the configurable options.
+This is a simple plugin used to rate the articles or any content on dynamic and static page. You can customize as you need, with the configurable options.
 
 The rating plugin provides the ability to lock the rating and call back function will execute to save the user rating to database.
 
@@ -41,7 +41,12 @@ Include rating plugin in your page and include div with data attribute
     "data-theme"     : "1"     // theme according to your page  [1 to 4]
     "data-halfrate"     : "true"  //  if true user have .5 rating feature else fullrate
 
+#Published Date 
+
+    October 2017
+
 #Developed By
 
 SHAFEEQ.K.SIDHIK
 DOHA - QATAR
+# rating2
