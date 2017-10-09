@@ -165,26 +165,26 @@
 	<div class="clear"></div>
 <h2>Live Demo</h2>
 
-	<div>1. Full Star with right to left</div><div style="float: right;">
+	<div>1. Full Star with right to left (en)</div><div style="float: right;">
 	<div class="ratingbox" data-id="1" data-lock="false" data-rated=2 data-totalstar=5 data-theme=1></div>
 	</div>
 	<br><br>
-	<div>2. Full Star with left to right</div><div style="float: right;">
+	<div>2. Full Star with left to right (ar)</div><div style="float: right;">
 	<div class="ratingbox" data-id="2" data-lock="false" data-rated=3 data-totalstar=5 data-theme=2 data-lang='ar'></div>
 	</div>
 
 	<br><br>
-	<div>3. Half Star with right to left</div><div style="float: right;">
+	<div>3. Half Star with right to left (en)</div><div style="float: right;">
 	<div class="ratingbox" data-id="2" data-lock="false" data-rated=3 data-totalstar=4 data-theme=3 data-halfrate=true></div>
 	</div>
 
 	<br><br>
-	<div>4. Half Star with left to right</div><div style="float: right;">
+	<div>4. Half Star with left to right (ar)</div><div style="float: right;">
 	<div class="ratingbox" data-id="2" data-lock="false" data-rated=3 data-totalstar=4 data-theme=4 data-halfrate=true data-lang='ar'></div>
 	</div>
 
 	<br><br>
-	<div>5. Additional theme with already 3.5 rated</div><div style="float: right;">
+	<div>5. Additional theme with already 3.5 rated and locked</div><div style="float: right;">
 	<div class="ratingbox" data-id="2" data-lock="true" data-rated=2.5 data-totalstar=5 data-theme=5 data-halfrate=true data-lang='en'></div>
 	</div>
 	<br><br><br><br>

@@ -20,7 +20,7 @@
 }
 
 
-/*  theme default  */
+
 .fa-star-half-empty:after, .fa-star-half-full:after, .fa-star-half-o:after {
     content: "\f089";
     transform: rotateY(-180deg);
@@ -31,13 +31,14 @@
     overflow: hidden;
 }
 
+/*  theme 1 */
 
-.rated,.fa-star-half-o{
+.rated1,.fa-star-half-o1{
 
     color: #ffab00;
     cursor: pointer;
 }
-.unrated,.fa-star-half-o:after{
+.unrated1,.fa-star-half-o1:after{
 
     color: #757575;
     cursor: pointer;

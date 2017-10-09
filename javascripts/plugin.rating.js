@@ -211,10 +211,9 @@
 					{
 					
 
-						case "2":
-						case "3":
-						case "4":
-						case "5":
+						
+
+						default:
 						this.ratedstar='rated'+theme;
 						this.unratedstar='unrated'+theme;
 						this.setcss=this.ratedstar;
@@ -223,16 +222,14 @@
 						else
 						this.halfstar='fa-star-half-o fa-star-half-o'+theme;
 						break;
-
-						default:
-						this.ratedstar='rated';
-						this.unratedstar='unrated';
-						this.setcss=this.ratedstar;
-						if(lang=='ar')
-							this.halfstar='fa-star-half-o  fa-flip-horizontal';
-						else
-						this.halfstar='fa-star-half-o';
-						break;
+						// this.ratedstar='rated';
+						// this.unratedstar='unrated';
+						// this.setcss=this.ratedstar;
+						// if(lang=='ar')
+						// 	this.halfstar='fa-star-half-o  fa-flip-horizontal';
+						// else
+						// this.halfstar='fa-star-half-o';
+						// break;
 					}
 					
 
