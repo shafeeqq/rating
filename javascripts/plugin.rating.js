@@ -359,7 +359,7 @@
 
 
 	$.fn.stars=function(options){
-		var dataoptions,optionslock,optionslang,optionsrated,optionstotalstar,optionsid,optionstheme,optionshalfrate;
+		var dataoptions,optionslock,optionslang,optionsrated,optionstotalstar,optionsid,optionstheme,optionshalfrate,optioncookie;
 			
 		 this.each(function(index, val) {
 
@@ -370,7 +370,7 @@
 		 		optionsid=(options.id==''  || $.type(options.id)=='undefined' ? 0 : options.id);
 		 		optionstheme=(options.theme==''  || $.type(options.theme)=='undefined' ? 1 : options.theme);
 		 		optionshalfrate=(options.halfrate==''  || $.type(options.halfrate)=='undefined' ? true : options.halfrate);
-
+		 		optioncookie=(options.cookiename==''  || $.type(options.cookiename)=='undefined' ? '' : options.cookiename);//defualt empty
 		 			
 		 		dataoptions={
 
@@ -380,11 +380,12 @@
 				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? optionstotalstar : $(this).data('totalstar')),
 				id	: ($(this).data('id')==''  || $.type($(this).data('id'))=='undefined' ? optionsid : $(this).data('id')),
 				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? optionstheme : $(this).data('theme')),
-				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? optionshalfrate : $(this).data('halfrate'))
+				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? optionshalfrate : $(this).data('halfrate')),
+				cookiename	: ($(this).data('cookiename')==''  || $.type($(this).data('cookiename'))=='undefined' ? optioncookie : $(this).data('cookiename'))
 				};
 
 				if(options.cookiename)
-                {//cokkiename
+                {//cokkiename  //single name for all page
                       //if($.cookie(options.cookiename))//alredy rated  
                       if(Cookies.get(options.cookiename)) //already rated 
                       dataoptions.lock=true; 
@@ -392,14 +393,17 @@
 				
 				options=$.extend({},options,dataoptions); // default options from script to all element
 
-				$(this).data('lock', options.lock);
+				
 				$(this).data('lang', options.lang);
 				$(this).data('rated', options.rated);
 				$(this).data('totalstar', options.totalstar);
 				$(this).data('id', options.id);
 				$(this).data('theme', options.theme);
 				$(this).data('halfrate', options.halfrate);
-				
+				$(this).data('cookiename', options.cookiename);
+
+				if(Cookies.get(dataoptions.cookiename))
+				$(this).data('lock',true); //if through data-  cookie name check and lock (multiple cookie name)
 				
 		 	 new Rating(this,options);
 			 return this;

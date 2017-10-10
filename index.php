@@ -157,6 +157,7 @@
 			"data-totalstar" : "5",  // Total number of stars needed for rating<br>
 			"data-theme"     : "1"     // theme according to your page  [1 to 5] (additional can be add to style)<br>
 			"data-halfrate"     : "true"  // if true user have .5 rating feature else fullrate<br>
+			"data-cookiename"     : ""  // cookie name to your rated article for lock dublicate entry<br>
 			
 			
 		</div>
