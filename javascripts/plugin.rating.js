@@ -362,7 +362,7 @@
 		var dataoptions,optionslock,optionslang,optionsrated,optionstotalstar,optionsid,optionstheme,optionshalfrate,optioncookie;
 			
 		 this.each(function(index, val) {
-
+		 	
 		 		optionslock=(options.lock==''  || $.type(options.lock)=='undefined' ? false : options.lock);
 		 		optionslang=(options.lang==''  || $.type(options.lang)=='undefined' ? 'en' : options.lang);
 		 		optionsrated=(options.rated==''  || $.type(options.rated)=='undefined' ? 0 : options.rated);
@@ -374,37 +374,49 @@
 		 			
 		 		dataoptions={
 
-				lock	: 	($(this).data('lock')==''  || $.type($(this).data('lock'))=='undefined' ? optionslock : $(this).data('lock')),
-				lang	: 	($(this).data('lang')==''  || $.type($(this).data('lang'))=='undefined' ? optionslang : $(this).data('lang')),
-				rated	:	($(this).data('rated')==''  || $.type($(this).data('rated'))=='undefined' ? optionsrated : $(this).data('rated')),
-				totalstar	: ($(this).data('totalstar')==''  || $.type($(this).data('totalstar'))=='undefined' ? optionstotalstar : $(this).data('totalstar')),
-				id	: ($(this).data('id')==''  || $.type($(this).data('id'))=='undefined' ? optionsid : $(this).data('id')),
-				theme		: ($(this).data('theme')==''  || $.type($(this).data('theme'))=='undefined' ? optionstheme : $(this).data('theme')),
-				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? optionshalfrate : $(this).data('halfrate')),
-				cookiename	: ($(this).data('cookiename')==''  || $.type($(this).data('cookiename'))=='undefined' ? optioncookie : $(this).data('cookiename'))
+				lock	: 	($(this).attr('data-lock')==''  || $.type($(this).attr('data-lock'))=='undefined' ? optionslock : $(this).attr('data-lock')),
+				lang	: 	($(this).attr('data-lang')==''  || $.type($(this).attr('data-lang'))=='undefined' ? optionslang : $(this).attr('data-lang')),
+				rated	:	($(this).attr('data-rated')==''  || $.type($(this).attr('data-rated'))=='undefined' ? optionsrated : $(this).attr('data-rated')),
+				totalstar	: ($(this).attr('data-totalstar')==''  || $.type($(this).attr('data-totalstar'))=='undefined' ? optionstotalstar : $(this).attr('data-totalstar')),
+				id	: ($(this).attr('data-id')==''  || $.type($(this).attr('data-id'))=='undefined' ? optionsid : $(this).attr('data-id')),
+				theme		: ($(this).attr('data-theme')==''  || $.type($(this).attr('data-theme'))=='undefined' ? optionstheme : $(this).attr('data-theme')),
+				halfrate	: ($(this).attr('data-halfrate')==''  || $.type($(this).attr('data-halfrate'))=='undefined' ? optionshalfrate : $(this).attr('data-halfrate')),
+				cookiename	: ($(this).attr('data-cookiename')==''  || $.type($(this).attr('data-cookiename'))=='undefined' ? optioncookie : $(this).attr('data-cookiename'))
 				};
 
-				if(options.cookiename)
-                {//cokkiename  //single name for all page
-                      //if($.cookie(options.cookiename))//alredy rated  
-                      if(Cookies.get(options.cookiename)) //already rated 
+				var optcokie=options.cookiename;
+				if(optcokie!="undefined" && optcokie!='' && optcokie!=null)
+                {//cokkiename  
+                	
+                      var cooki=Cookies.get(options.cookiename);
+                      if(cooki!="undefined" && cooki!='' && cooki!=null)
                       dataoptions.lock=true; 
+
                 }
 				
 				options=$.extend({},options,dataoptions); // default options from script to all element
-
+			
 				
-				$(this).data('lang', options.lang);
-				$(this).data('rated', options.rated);
-				$(this).data('totalstar', options.totalstar);
-				$(this).data('id', options.id);
-				$(this).data('theme', options.theme);
-				$(this).data('halfrate', options.halfrate);
-				$(this).data('cookiename', options.cookiename);
-
-				if(Cookies.get(dataoptions.cookiename))
-				$(this).data('lock',true); //if through data-  cookie name check and lock (multiple cookie name)
 				
+
+				$(this).attr('data-lock', options.lock);
+				$(this).attr('data-lang', options.lang);
+				$(this).attr('data-rated', options.rated);
+				$(this).attr('data-totalstar', options.totalstar);
+				$(this).attr('data-id', options.id);
+				$(this).attr('data-theme', options.theme);
+				$(this).attr('data-halfrate', options.halfrate);
+				$(this).attr('data-cookiename', options.cookiename);
+
+
+				if(dataoptions.cookiename!="undefined"  && dataoptions.cookiename!='' && dataoptions.cookiename!=null)
+				{
+				var cooki2=Cookies.get(dataoptions.cookiename);				
+                if(cooki2!="undefined" && cooki2!='' && cooki2!=null)
+				$(this).attr('data-lock',true); //if through data-  cookie name check and lock (multiple cookie name)
+				
+				}
+			
 		 	 new Rating(this,options);
 			 return this;
 		 });
