@@ -54,6 +54,7 @@
 
 	</style>
 	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/js-cookie.js"></script>
 	<script type="text/javascript" src="javascripts/plugin.rating.js"></script>
 	<script>
 		

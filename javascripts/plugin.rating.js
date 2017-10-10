@@ -7,7 +7,7 @@
 		rated	: 	  0,
 		theme		: 1,
 		halfrate	: true,
-
+		cookiename  : '',
 		callbackfn	: function() {
 			
 					
@@ -383,7 +383,12 @@
 				halfrate	: ($(this).data('halfrate')==''  || $.type($(this).data('halfrate'))=='undefined' ? optionshalfrate : $(this).data('halfrate'))
 				};
 
-
+				if(options.cookiename)
+                {//cokkiename
+                      //if($.cookie(options.cookiename))//alredy rated  
+                      if(Cookies.get(options.cookiename)) //already rated 
+                      dataoptions.lock=true; 
+                }
 				
 				options=$.extend({},options,dataoptions); // default options from script to all element
 
