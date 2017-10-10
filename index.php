@@ -62,6 +62,7 @@
 
 			$('.ratingbox').stars({
 				lang		: "en",
+				cookiename : "",
 				callbackfn	: function(ratedid,ratedvalue) {
 					
 					console.log("Rated Id is "+ratedid+'and rated value is '+ratedvalue);
