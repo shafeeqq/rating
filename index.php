@@ -169,7 +169,7 @@
 <h2>Live Demo</h2>
 
 	<div>1. Full Star with right to left (en)</div><div style="float: right;">
-	<div class="ratingbox" data-id="1" data-lock="false" data-rated=2 data-totalstar=5 data-theme=1></div>
+	<div class="ratingbox" data-id="1"   data-rated=2 data-totalstar=5 data-theme=1></div>
 	</div>
 	<br><br>
 	<div>2. Full Star with left to right (ar)</div><div style="float: right;">
