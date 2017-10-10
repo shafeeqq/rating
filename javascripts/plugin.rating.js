@@ -390,7 +390,10 @@
                 	
                       var cooki=Cookies.get(options.cookiename);
                       if(cooki!="undefined" && cooki!='' && cooki!=null)
-                      dataoptions.lock=true; 
+                      {
+	                     if(cooki==dataoptions.id)
+                 	     dataoptions.lock=true; 
+                      }
 
                 }
 				
@@ -411,9 +414,12 @@
 
 				if(dataoptions.cookiename!="undefined"  && dataoptions.cookiename!='' && dataoptions.cookiename!=null)
 				{
-				var cooki2=Cookies.get(dataoptions.cookiename);				
+				 cooki2=Cookies.get(dataoptions.cookiename);				
                 if(cooki2!="undefined" && cooki2!='' && cooki2!=null)
-				$(this).attr('data-lock',true); //if through data-  cookie name check and lock (multiple cookie name)
+                {
+	                if(cooki2==$(this).attr('data-id'))
+					$(this).attr('data-lock',true); //if through data-  cookie name check and lock (multiple cookie name)
+				}
 				
 				}
 			
